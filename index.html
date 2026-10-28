@@ -98,7 +98,7 @@
             <i class="fa-solid fa-hourglass-half text-yellow-400 text-3xl animate-spin"></i>
             <h3 class="font-black text-base text-white">ИНТИЗОРӢ БАРОИ ТАСДИҚ</h3>
             <p class="text-xs text-slate-300">Дархости шумо ба админ (<b class="text-cyan-400">@SHAMILCPP</b>) фиристода шуд. Вақте админ иҷозат медиҳад, сомона худкор мекушояд!</p>
-            <a href="https://t.me/SHAMILCPP" target="_blank" class="block w-full py-3 bg-blue-600 text-white rounded-xl font-bold text-xs">ФИРИСТОДАНИ ЧЕК БА ТЕЛЕГРАМ</a>
+            <a href="https://t.me/SHAMILCPP" target="_blank" class="block w-full py-3 bg-blue-600 text-white rounded-xl font-bold text-xs">ФИРИСТОДАНИ ЧЕК БА TELEGRAM</a>
             <button onclick="logoutUser()" class="text-xs text-red-400 underline">Аз нав сабти ном кардан</button>
         </div>
     </div>
@@ -124,7 +124,7 @@
                 <button onclick="switchTab('tournament')" class="text-slate-300 transition hover:text-yellow-400 flex items-center gap-1"><i class="fa-solid fa-trophy text-yellow-400"></i> Турнир</button>
                 <button onclick="switchTab('brands')" class="text-slate-300 transition hover:text-cyan-400 flex items-center gap-1"><i class="fa-solid fa-mobile-screen"></i> Чуствительность</button>
                 <button onclick="switchTab('coins')" class="text-yellow-400 transition hover:text-yellow-300 flex items-center gap-1 font-bold"><i class="fa-solid fa-coins"></i> Coins (DC)</button>
-                <button onclick="switchTab('booster')" class="text-slate-300 transition hover:text-purple-400 flex items-center gap-1"><i class="fa-solid fa-bolt text-yellow-400"></i> ВХА</button>
+                <button onclick="switchTab('panels')" class="text-purple-400 transition hover:text-purple-300 flex items-center gap-1 font-bold"><i class="fa-solid fa-bolt text-yellow-400"></i> Панелҳо</button>
                 <button onclick="switchTab('pc')" class="text-slate-300 transition hover:text-pink-400 flex items-center gap-1"><i class="fa-solid fa-desktop text-pink-400"></i> PC</button>
             </nav>
 
@@ -144,7 +144,7 @@
             <button onclick="switchTab('tournament'); toggleMobileMenu()" class="text-left text-yellow-400 py-1"><i class="fa-solid fa-trophy mr-2"></i> Турнири Онлайн (20 Coins)</button>
             <button onclick="switchTab('brands'); toggleMobileMenu()" class="text-left text-slate-300 py-1"><i class="fa-solid fa-mobile-screen mr-2"></i> Чуствительность</button>
             <button onclick="switchTab('coins'); toggleMobileMenu()" class="text-left text-yellow-400 py-1 font-bold"><i class="fa-solid fa-coins mr-2"></i> Харидани Coins (DC)</button>
-            <button onclick="switchTab('booster'); toggleMobileMenu()" class="text-left text-purple-400 py-1"><i class="fa-solid fa-bolt mr-2"></i> ВХА</button>
+            <button onclick="switchTab('panels'); toggleMobileMenu()" class="text-left text-purple-400 py-1 font-bold"><i class="fa-solid fa-bolt mr-2"></i> Панелҳо (Android, iOS, PC)</button>
             <button onclick="switchTab('pc'); toggleMobileMenu()" class="text-left text-pink-400 py-1"><i class="fa-solid fa-desktop mr-2"></i> PC ва Панелҳо</button>
         </div>
     </header>
@@ -163,14 +163,14 @@
                         VIP SENS <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500">FREE FIRE HUB</span>
                     </h2>
                     <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                        Баланси шумо: <b id="home-user-coins" class="text-yellow-400">0</b> Coins. Ҳамаи моделҳои телефонҳо ва Турнирҳои расмӣ дастрас аст!
+                        Баланси шумо: <b id="home-user-coins" class="text-yellow-400">0</b> Coins. Ҳамаи моделҳои телефонҳо ва Панелҳои нав дастрас аст!
                     </p>
                     <div class="flex flex-col sm:flex-row gap-3 pt-2 justify-center sm:justify-start">
+                        <button onclick="switchTab('panels')" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-600 text-white font-orbitron font-bold text-xs shadow-neon-purple">
+                            <i class="fa-solid fa-bolt mr-1"></i> ПАНЕЛҲОИ НОВИН (Android, iOS, PC) 🔥
+                        </button>
                         <button onclick="switchTab('tournament')" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-gradient-to-r from-yellow-500 to-amber-600 text-slate-950 font-orbitron font-bold text-xs shadow-neon-gold">
                             <i class="fa-solid fa-trophy mr-1"></i> ТУРНИРИ ОНЛАЙН (20 COINS) 🏆
-                        </button>
-                        <button onclick="switchTab('brands')" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-orbitron font-bold text-xs shadow-neon-cyan">
-                            <i class="fa-solid fa-mobile-screen mr-1"></i> НАСТРОЙКАИ ТЕЛЕФОНҲО ⚡
                         </button>
                     </div>
                 </div>
@@ -205,20 +205,60 @@
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 gap-4 max-w-md mx-auto pt-2 font-orbitron">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto pt-2 font-orbitron">
                 <div class="glass-panel p-4 rounded-2xl border border-yellow-500/30 flex justify-between items-center shadow-neon-gold">
-                    <h3 class="text-lg font-black text-yellow-400">30 Coins</h3>
-                    <p class="text-base font-bold text-white">10 Сомонӣ</p>
-                </div>
-                <div class="glass-panel-purple p-4 rounded-2xl border border-purple-500/40 flex justify-between items-center shadow-neon-purple">
-                    <h3 class="text-lg font-black text-yellow-400">100 Coins</h3>
-                    <p class="text-base font-bold text-white">30 Сомонӣ</p>
+                    <h3 class="text-base font-black text-yellow-400">20 Coins</h3>
+                    <p class="text-sm font-bold text-white">10 Сомонӣ</p>
                 </div>
                 <div class="glass-panel p-4 rounded-2xl border border-cyan-500/40 flex justify-between items-center shadow-neon-cyan">
-                    <h3 class="text-lg font-black text-yellow-400">250 Coins</h3>
-                    <p class="text-base font-bold text-white">70 Сомонӣ</p>
+                    <h3 class="text-base font-black text-cyan-400">40 Coins</h3>
+                    <p class="text-sm font-bold text-white">20 Сомонӣ</p>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl border border-purple-500/40 flex justify-between items-center shadow-neon-purple">
+                    <h3 class="text-base font-black text-purple-400">70 Coins</h3>
+                    <p class="text-sm font-bold text-white">35 Сомонӣ</p>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl border border-yellow-500/40 flex justify-between items-center shadow-neon-gold">
+                    <h3 class="text-base font-black text-yellow-400">100 Coins</h3>
+                    <p class="text-sm font-bold text-white">50 Сомонӣ</p>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl border border-emerald-500/40 flex justify-between items-center">
+                    <h3 class="text-base font-black text-emerald-400">140 Coins</h3>
+                    <p class="text-sm font-bold text-white">70 Сомонӣ</p>
+                </div>
+                <div class="glass-panel-pink p-4 rounded-2xl border border-pink-500/40 flex justify-between items-center shadow-neon-pink">
+                    <h3 class="text-base font-black text-pink-400">200 Coins</h3>
+                    <p class="text-sm font-bold text-white">100 Сомонӣ</p>
                 </div>
             </div>
+        </div>
+
+        <!-- TAB: BRANDS & SENSITIVITY (БАГРИ БОЙИ ТЕЛЕФОНҲО ДАСТНОХӮРДА ВА ПУРРА) -->
+        <div id="tab-brands" class="tab-content hidden space-y-6">
+            <div class="text-center max-w-md mx-auto space-y-2">
+                <h2 class="text-2xl font-black font-orbitron text-cyan-400">МОДЕЛОИ ТЕЛЕФОН</h2>
+                <p class="text-slate-300 text-xs">Брендро интихоб кунед. Зиёда аз 20-30 модел алоҳида мавҷуд аст!</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2" id="brand-tabs-container"></div>
+            <div id="brand-models-container" class="grid grid-cols-1 gap-4 max-w-md mx-auto pt-2"></div>
+        </div>
+
+        <!-- TAB: ПАНЕЛҲО (ANDROID, IPHONE, PC - 60+ НАМУД ПАНЕЛҲО) -->
+        <div id="tab-panels" class="tab-content hidden space-y-6">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <h2 class="text-2xl sm:text-3xl font-black font-orbitron text-purple-400">ПАНЕЛҲОИ КАСРИИ FREE FIRE (20+ АНДРОИД, 20+ IPHONE, 20+ PC)</h2>
+                <p class="text-slate-300 text-xs">Панҷараи махсуси панелҳои Phantom, BR Mod, Miguel, Flourait ва даҳҳо намуди дигар бо нархҳои дастраси сомонӣ ва Coins!</p>
+            </div>
+
+            <!-- Интихоби Платформа -->
+            <div class="flex justify-center gap-2 font-orbitron">
+                <button onclick="renderPanelsTab('android')" id="btn-panel-android" class="px-4 py-2 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs shadow-neon-cyan">🤖 Android (20+)</button>
+                <button onclick="renderPanelsTab('iphone')" id="btn-panel-iphone" class="px-4 py-2 rounded-xl glass-panel text-pink-400 font-bold text-xs">🍎 iPhone (20+)</button>
+                <button onclick="renderPanelsTab('pc')" id="btn-panel-pc" class="px-4 py-2 rounded-xl glass-panel text-yellow-400 font-bold text-xs">💻 PC & Emulators (20+)</button>
+            </div>
+
+            <!-- Рӯйхати Панелҳо -->
+            <div id="panels-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto pt-2 font-orbitron"></div>
         </div>
 
         <!-- TAB: TOURNAMENT -->
@@ -265,39 +305,50 @@
             </div>
         </div>
 
-        <!-- TAB: BRANDS & SENSITIVITY (20-30+ MODELS EACH) -->
-        <div id="tab-brands" class="tab-content hidden space-y-6">
-            <div class="text-center max-w-md mx-auto space-y-2">
-                <h2 class="text-2xl font-black font-orbitron text-cyan-400">ЧУСТВИТЕЛЬНОСТЬ ВА МОДЕЛОИ ТЕЛЕФОН</h2>
-                <p class="text-slate-300 text-xs">Брендро интихоб кунед. Зиёда аз 20-30 модел алоҳида мавҷуд аст!</p>
-            </div>
-            <div class="flex flex-wrap justify-center gap-2" id="brand-tabs-container"></div>
-            <div id="brand-models-container" class="grid grid-cols-1 gap-4 max-w-md mx-auto pt-2"></div>
-        </div>
-
-        <!-- TAB: ВХА -->
-        <div id="tab-booster" class="tab-content hidden space-y-6">
-            <div class="text-center max-w-md mx-auto space-y-2">
-                <h2 class="text-2xl font-black font-orbitron text-purple-400">ВХА ВА УСИЛИТЕЛЬ</h2>
-            </div>
-            <div class="grid grid-cols-1 gap-4 max-w-md mx-auto">
-                <div class="glass-panel-purple p-5 rounded-2xl border border-purple-500/40 space-y-3">
-                    <h3 class="font-orbitron font-bold text-base text-white">ВХА Стандарт (15 Coins)</h3>
-                    <button onclick="buyService('ВХА Стандарт', 15)" class="w-full py-3 bg-purple-600 text-white rounded-xl font-orbitron font-bold text-xs">ХАРИД</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- TAB: PC -->
+        <!-- TAB: PC (ПАНЕЛҲОИ ПК ВА АПТИМИЗАТСИЯ БО НАРХҲОИ СОМОНӢ) -->
         <div id="tab-pc" class="tab-content hidden space-y-6">
             <div class="text-center max-w-md mx-auto space-y-2">
-                <h2 class="text-2xl font-black font-orbitron text-pink-400">ПАНЕЛҲОИ ПК</h2>
+                <h2 class="text-2xl font-black font-orbitron text-pink-400">ПАНЕЛҲОИ ПК ВА АПТИМИЗАТСИЯ</h2>
+                <p class="text-slate-300 text-xs">Настройкаҳои махсус барои эмуляторҳои ПК, Free Fire 200+ FPS, 70 см сенсаи маус ва оптимизатсияи пурраи Windows!</p>
             </div>
-            <div class="grid grid-cols-1 gap-4 max-w-md mx-auto">
-                <div class="glass-panel p-5 rounded-2xl border border-purple-500/40 space-y-3">
-                    <h3 class="font-orbitron font-bold text-base text-white">Панели МСИ (20 Coins)</h3>
-                    <button onclick="buyService('Панели МСИ', 20)" class="w-full py-3 bg-pink-600 text-white rounded-xl font-orbitron font-bold text-xs">ХАРИД</button>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto pt-2 font-orbitron">
+                
+                <div class="glass-panel p-5 rounded-2xl border border-pink-500/40 shadow-neon-pink space-y-3">
+                    <div class="flex justify-between items-center"><h3 class="font-bold text-sm text-white">1. Панели MSI & BlueStacks 200 FPS Ultra</h3><span class="text-yellow-400 font-bold text-xs">20 Coins (10 сом)</span></div>
+                    <p class="text-[11px] text-slate-400">Устувор кардани кадрҳо то 200+ FPS дар эмулятор, нест кардани лаги Free Fire ва баланд бардоштани плавность.</p>
+                    <button onclick="buyService('Панели MSI & BlueStacks 200 FPS Ultra', 20)" class="w-full py-2.5 bg-pink-600 text-white rounded-xl font-bold text-xs">ХАРИД КАРДАН (10 С.)</button>
                 </div>
+
+                <div class="glass-panel p-5 rounded-2xl border border-cyan-500/40 shadow-neon-cyan space-y-3">
+                    <div class="flex justify-between items-center"><h3 class="font-bold text-sm text-white">2. Free Fire PC 70 см Sens & DPI Master</h3><span class="text-yellow-400 font-bold text-xs">40 Coins (20 сом)</span></div>
+                    <p class="text-[11px] text-slate-400">Настройкаи дақиқи сенсаи маус (70 см барои як оборот), DPI ва баҳрабардорӣ аз ҳедшотҳои тоза дар эмулятор.</p>
+                    <button onclick="buyService('Free Fire PC 70 см Sens & DPI Master', 40)" class="w-full py-2.5 bg-cyan-500 text-slate-950 font-bold text-xs">ХАРИД КАРДАН (20 С.)</button>
+                </div>
+
+                <div class="glass-panel p-5 rounded-2xl border border-purple-500/40 shadow-neon-purple space-y-3">
+                    <div class="flex justify-between items-center"><h3 class="font-bold text-sm text-white">3. Windows 10/11 Gaming Optimization</h3><span class="text-yellow-400 font-bold text-xs">70 Coins (35 сом)</span></div>
+                    <p class="text-[11px] text-slate-400">Аптимизатсияи чуқури системаи оперантӣ, хомӯш кардани фоновые процессы, кам кардани задержка (Input Lag).</p>
+                    <button onclick="buyService('Windows 10/11 Gaming Optimization', 70)" class="w-full py-2.5 bg-purple-600 text-white font-bold text-xs">ХАРИД КАРДАН (35 С.)</button>
+                </div>
+
+                <div class="glass-panel p-5 rounded-2xl border border-yellow-500/40 shadow-neon-gold space-y-3">
+                    <div class="flex justify-between items-center"><h3 class="font-bold text-sm text-white">4. LDPlayer & SmartGaGa Pro Boost</h3><span class="text-yellow-400 font-bold text-xs">100 Coins (50 сом)</span></div>
+                    <p class="text-[11px] text-slate-400">Танзимоти ҳадди аксари графика ва ядраҳои процессори ПК барои эмуляторҳои сабук ва вазнин.</p>
+                    <button onclick="buyService('LDPlayer & SmartGaGa Pro Boost', 100)" class="w-full py-2.5 bg-yellow-500 text-slate-950 font-bold text-xs">ХАРИД КАРДАН (50 С.)</button>
+                </div>
+
+                <div class="glass-panel p-5 rounded-2xl border border-emerald-500/40 space-y-3">
+                    <div class="flex justify-between items-center"><h3 class="font-bold text-sm text-white">5. Full PC Hardware & GPU Tuning Pack</h3><span class="text-yellow-400 font-bold text-xs">140 Coins (70 сом)</span></div>
+                    <p class="text-[11px] text-slate-400">Настройкаи драйвери NVIDIA/AMD, бартараф кардани микрофризҳо ва баланд бардоштани производительность.</p>
+                    <button onclick="buyService('Full PC Hardware & GPU Tuning Pack', 140)" class="w-full py-2.5 bg-emerald-600 text-white font-bold text-xs">ХАРИД КАРДАН (70 С.)</button>
+                </div>
+
+                <div class="glass-panel p-5 rounded-2xl border border-red-500/40 shadow-neon-pink space-y-3">
+                    <div class="flex justify-between items-center"><h3 class="font-bold text-sm text-white">6. Ultimate PC VIP Hack & Sens Bundle</h3><span class="text-yellow-400 font-bold text-xs">200 Coins (100 сом)</span></div>
+                    <p class="text-[11px] text-slate-400">Ҳамаи панелҳои боло якҷоя + скриптҳои махсуси ҳедшот ва сохтани профили касбии киберспортӣ дар ПК!</p>
+                    <button onclick="buyService('Ultimate PC VIP Hack & Sens Bundle', 200)" class="w-full py-2.5 bg-gradient-to-r from-red-600 to-pink-600 text-white font-bold text-xs">ХАРИД КАРДАН (100 С.)</button>
+                </div>
+
             </div>
         </div>
 
@@ -423,6 +474,7 @@
             checkAuthFlow();
             checkAdminHashRoute();
             renderBrandTabs();
+            renderPanelsTab('android');
             loadTournamentData();
             loadTournamentPlayers();
         };
@@ -564,7 +616,7 @@
             });
         }
 
-        // БАЗАИ БОЙИ ТЕЛЕФОНҲО (АЗ 20 ТО 30+ МОДЕЛИ АЛОҲИДА БАРОИ ҲАР ИК БРЕНД АЗ АВВАЛ ТО ҲОЗИРА)
+        // БАЗАИ БОЙИ ТЕЛЕФОНҲО (ПУРРА МИЛЛИОН МОДЕЛ АЗ ҲАМА БРЕНДҲО)
         const phoneData = {
             iphone: { name: "iPhone", icon: "fa-brands fa-apple", models: [
                 { name: "iPhone 17 Pro Max", free: { general: 196, reddot: 191, scope2: 189, scope4: 185, dpi: "iOS 17 Pro" } },
@@ -744,6 +796,76 @@
             ]}
         };
 
+        // БАЗАИ ПАНЕЛҲОИ НОВИН (20 НАМУД БАРОИ АНДРОИД, 20 НАМУД БАРОИ IPHONE, 20 НАМУД БАРОИ PC)
+        const customPanelsData = {
+            android: [
+                { name: "Phantom BR Mod v1", costCoins: 20, costSom: 10, desc: "Панели махсуси Phantom бо антибан ва ҳедшоти 95% барои BR." },
+                { name: "Miguel Injector Pro", costCoins: 25, costSom: 12, desc: "Панели тезсуръати Miguel бо идоракунии падении прицел." },
+                { name: "Flourait Aim VIP", costCoins: 30, costSom: 15, desc: "Версияи беҳтарини Flourait барои телефонҳои миёна ва суст." },
+                { name: "Phantom CS Master", costCoins: 35, costSom: 18, desc: "Барои рейтинги CS ва назорати пурраи гардиш." },
+                { name: "Miguel Cyber Hack", costCoins: 40, costSom: 20, desc: "Скрипти мукаммал барои Android 12-15." },
+                { name: "Flourait Dark NX", costCoins: 20, costSom: 10, desc: "Эффекти анимиронии меню бо ҳедшоти автоматӣ." },
+                { name: "Phantom Royal V2", costCoins: 45, costSom: 22, desc: "Версияи навшудаи Phantom бо фоновые защитаҳо." },
+                { name: "Miguel Extreme Aim", costCoins: 50, costSom: 25, desc: "Сенсаи баланд ва белаг барои телефони Андроиди шумо." },
+                { name: "Flourait God Mode", costCoins: 60, costSom: 30, desc: "Пакет бо скриптҳои махсуси ҳедшоти масофавӣ." },
+                { name: "Phantom Ghost Injector", costCoins: 30, costSom: 15, desc: "Пинҳонӣ кор мекунад ва ба система таъсир намерасонад." },
+                { name: "Miguel Apex Sense", costCoins: 25, costSom: 12, desc: "Танзими идеалии DPI ва чуствительность." },
+                { name: "Flourait Neo Spark", costCoins: 35, costSom: 18, desc: "Дизайнаш бо нури неон ва функсияҳои тезонидани FPS." },
+                { name: "Phantom Zero Lag VIP", costCoins: 40, costSom: 20, desc: "Тоза кардани муваққатии кэш ва баланд бардоштани FPS." },
+                { name: "Miguel Headshot King", costCoins: 55, costSom: 28, desc: "Беҳтарин панел барои ҳедшот аз масофаи дур." },
+                { name: "Flourait Ultra X", costCoins: 30, costSom: 15, desc: "Сенсаи мӯътадил барои бозигарони касбӣ." },
+                { name: "Phantom RedDot Hack", costCoins: 20, costSom: 10, desc: "Аниқкунии худкори прицели сурх дар душман." },
+                { name: "Miguel Scope Master", costCoins: 40, costSom: 20, desc: "Панели махсус барои 2x ва 4x прицелҳо." },
+                { name: "Flourait Elite 2026", costCoins: 70, costSom: 35, desc: "Панели навтарини соли 2026 бо навсозии худкор." },
+                { name: "Phantom Ultimate Android", costCoins: 80, costSom: 40, desc: "Ҳамаи функсияҳои Phantom дар як файл." },
+                { name: "Miguel & Flourait Mega Pack", costCoins: 100, costSom: 50, desc: "Маҷмӯи ду панели беҳтарин якҷоя бо тарҳи VIP." }
+            ],
+            iphone: [
+                { name: "Phantom iOS Pro Max", costCoins: 30, costSom: 15, desc: "Версияи махсуси Phantom барои системаи iOS ва iPhone." },
+                { name: "Miguel iOS Elite", costCoins: 35, costSom: 18, desc: "Настройкаи дақиқ барои iPhone 11 то 17 Pro Max." },
+                { name: "Flourait iOS Cyber", costCoins: 40, costSom: 20, desc: "Панели устувор барои эмуляция ва сенсаи телефонҳои Apple." },
+                { name: "Phantom iOS Headshot", costCoins: 50, costSom: 25, desc: "Хедшоти бехато бо падении минималии прицел." },
+                { name: "Miguel iOS Safe Mod", costCoins: 45, costSom: 22, desc: "Бе антибан ва бе хатари баста шудани аккаунт." },
+                { name: "Flourait iOS Direct", costCoins: 60, costSom: 30, desc: "Танзимоти худкор барои iOS 15, 16 ва 17." },
+                { name: "Phantom iOS VIP 360", costCoins: 55, costSom: 28, desc: "Гардиши босуръат ва назорати оташ." },
+                { name: "Miguel iOS Ultra Boost", costCoins: 40, costSom: 20, desc: "Баланд бардоштани плавность ва кадрҳо дар iPhone." },
+                { name: "Flourait iOS Legends", costCoins: 70, costSom: 35, desc: "Панели интихобкардаи беҳтарин киберспортчиҳои тоҷик." },
+                { name: "Phantom iOS Custom", costCoins: 35, costSom: 18, desc: "Танзими инфиродӣ барои ҳар як модели айфон." },
+                { name: "Miguel iOS Fast Touch", costCoins: 30, costSom: 15, desc: "Тез кардани отклики экрани сенсории Apple." },
+                { name: "Flourait iOS Matrix", costCoins: 50, costSom: 25, desc: "Интерфейси зебо ва амалиёти босуръат." },
+                { name: "Phantom iOS Zero Recoil", costCoins: 65, costSom: 32, desc: "Беркашидани прицел ҳангоми оташ-афкани ҳадди ақал." },
+                { name: "Miguel iOS Global VIP", costCoins: 80, costSom: 40, desc: "Версияи ҷаҳонии панел барои турнирҳо." },
+                { name: "Flourait iOS Special", costCoins: 40, costSom: 20, desc: "Барои бозигарони соло ва отряд." },
+                { name: "Phantom iOS Extreme", costCoins: 45, costSom: 22, desc: "Сенсаи вазнин ва муътадил барои хедшотҳои тоза." },
+                { name: "Miguel iOS Apex Sense", costCoins: 35, costSom: 18, desc: "Аниқии баланд дар масофаҳои дур." },
+                { name: "Flourait iOS Master Pack", costCoins: 90, costSom: 45, desc: "Пакет бо ҳама скриптҳои iOS." },
+                { name: "Phantom iOS Ultimate 2026", costCoins: 100, costSom: 50, desc: "Панели пешрафтаи соли 2026 барои iPhone." },
+                { name: "Miguel & Flourait iOS Bundle", costCoins: 120, costSom: 60, desc: "Ҳамаи 20 панели iOS якҷоя бо тахфифи калон." }
+            ],
+            pc: [
+                { name: "Phantom PC Emulator Pro", costCoins: 40, costSom: 20, desc: "Барои MSI, BlueStacks ва LDPlayer бо сенсаи 70 см." },
+                { name: "Miguel PC 240 FPS", costCoins: 50, costSom: 25, desc: "Устуворсозии кадрҳо ва тоза кардани задержкаи маус." },
+                { name: "Flourait PC Macro Master", costCoins: 60, costSom: 30, desc: "Макросҳои тоза барои ҳедшотҳои бехато дар эмулятор." },
+                { name: "Phantom PC Headshot Suite", costCoins: 70, costSom: 35, desc: "Танзими DPI ва чуствительности маус." },
+                { name: "Miguel PC Gaming Boost", costCoins: 45, costSom: 22, desc: "Аптимизатсияи пурраи Windows барои Free Fire." },
+                { name: "Flourait PC Zero Delay", costCoins: 80, costSom: 40, desc: "Нест кардани Input Lag ва лаги эмулятор." },
+                { name: "Phantom PC Elite Hack", costCoins: 90, costSom: 45, desc: "Панели васеъ барои мусобиқаҳои ПК." },
+                { name: "Miguel PC Custom DPI", costCoins: 55, costSom: 28, desc: "Танзими дақиқи DPI маус аз 400 то 3200." },
+                { name: "Flourait PC RedDot Pro", costCoins: 50, costSom: 25, desc: "Аниқкунии прицел дар эмулятор." },
+                { name: "Phantom PC Ultimate FX", costCoins: 100, costSom: 50, desc: "Графикаи сабук ва хедшоти касбӣ." },
+                { name: "Miguel PC Cyber Room", costCoins: 60, costSom: 30, desc: "Барои клубҳои киберспортӣ ва ПК клубуҳо." },
+                { name: "Flourait PC SpeedX", costCoins: 65, costSom: 32, desc: "Суръати аксуламали баланд дар бозӣ." },
+                { name: "Phantom PC SmartGaGa Boost", costCoins: 40, costSom: 20, desc: "Махсус барои эмуляторҳои сабук." },
+                { name: "Miguel PC Super Bundle", costCoins: 110, costSom: 55, desc: "Маҷмӯи беҳтарин скриптҳои эмулятор." },
+                { name: "Flourait PC Legend Pack", costCoins: 120, costSom: 60, desc: "Танзимоти стримерҳои машҳур." },
+                { name: "Phantom PC Direct Aim", costCoins: 75, costSom: 38, desc: "Прицели рост ба нишон." },
+                { name: "Miguel PC Pro Gamer", costCoins: 85, costSom: 42, desc: "Барои расидан ба лигаи Грандмастер дар ПК." },
+                { name: "Flourait PC NextGen", costCoins: 130, costSom: 65, desc: "Технологияи нави соли 2026." },
+                { name: "Phantom PC Mega VIP", costCoins: 150, costSom: 75, desc: "Пакети пурраи ҳамаи панелҳои ПК." },
+                { name: "Miguel & Flourait Ultimate PC", costCoins: 200, costSom: 100, desc: "Ҳамаи 20 панели ПК якҷоя бо дастгирии доимӣ." }
+            ]
+        };
+
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             const target = document.getElementById('tab-' + tabId);
@@ -772,6 +894,39 @@
                     <div class="glass-panel p-4 rounded-2xl border border-cyber-border space-y-3">
                         <h4 class="font-orbitron font-bold text-white text-xs">${m.name}</h4>
                         <button onclick='openModelModal(${JSON.stringify(m)}, "${brand.name}")' class="w-full py-2.5 bg-cyber-card border border-cyan-500/40 text-cyan-400 font-bold text-[11px] rounded-xl">НАСТРОЙКАРО ДИДАН</button>
+                    </div>
+                `;
+            });
+        }
+
+        function renderPanelsTab(platform) {
+            const container = document.getElementById('panels-grid-container');
+            if(!container) return;
+            ['android', 'iphone', 'pc'].forEach(p => {
+                const btn = document.getElementById('btn-panel-' + p);
+                if(btn) {
+                    if(p === platform) {
+                        btn.className = "px-4 py-2 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs shadow-neon-cyan";
+                    } else {
+                        btn.className = "px-4 py-2 rounded-xl glass-panel text-cyan-400 font-bold text-xs";
+                    }
+                }
+            });
+            container.innerHTML = '';
+            const list = customPanelsData[platform] || [];
+            list.forEach(item => {
+                container.innerHTML += `
+                    <div class="glass-panel p-5 rounded-2xl border border-purple-500/30 shadow-neon-purple space-y-3 flex flex-col justify-between">
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between items-start">
+                                <h3 class="font-bold text-sm text-white">${item.name}</h3>
+                                <span class="text-yellow-400 font-bold text-xs">${item.costCoins} Coins (${item.costSom} сом)</span>
+                            </div>
+                            <p class="text-[11px] text-slate-400">${item.desc}</p>
+                        </div>
+                        <button onclick="buyService('${item.name}', ${item.costCoins})" class="w-full py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-xs rounded-xl shadow-neon-purple">
+                            ХАРИД КАРДАН (${item.costSom} СОМ)
+                        </button>
                     </div>
                 `;
             });
